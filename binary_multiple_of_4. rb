@@ -3,13 +3,25 @@
     and returns true if the string represents a binary number that is a multiple 
     of 4. NOTE: be sure it returns false if the string is not a valid 
     binary number!
+    
+    https://ideone.com/T64QDN
 =end
 
-def binary_multiple_of_4  (binNum)
+def binary_multiple_of_4? (binNum)
+	
+    bnry = /^[1][0]+/.match(binNum)
     
-    
+    if bnry
+        return bnry.to_s.to_i(2) % 4  == 0
+    else
+        return false
+    end
 end
 
-raise 'true' unless binary_multiple_of_4(8)
+#aise 'true' unless binary_multiple_of_4?('8')
 
-raise 'false' unless binary_multiple_of_4(9)
+#aise 'false' unless binary_multiple_of_4?('9')
+
+puts binary_multiple_of_4?("")
+puts binary_multiple_of_4?("0")
+puts binary_multiple_of_4?("1")
