@@ -9,8 +9,7 @@
 
 def binary_multiple_of_4? (binNum)
 	
-    bnry = /^[1][0]+/.match(binNum)
-    
+    bnry = /^[1][0]+/.match(binNum)    
     if bnry
         return bnry.to_s.to_i(2) % 4  == 0
     else
